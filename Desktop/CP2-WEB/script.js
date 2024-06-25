@@ -22,10 +22,27 @@ function changeSlide() {
     currentIndex = (currentIndex + 1) % images.length;
 }
 
-
-
 // Chama a função inicialmente para definir a primeira imagem do slideshow
 changeSlide();
 
 // Define um intervalo para chamar a função de mudar o slide a cada 5 segundos (5000 milissegundos)
 setInterval(changeSlide, 5000);
+
+
+var modal = document.getElementById("cart-modal");
+var btn = document.getElementById("cart-button");
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
